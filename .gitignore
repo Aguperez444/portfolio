@@ -1,0 +1,163 @@
+# ==============================================================================
+# Dependencias y caches (Node.js / TypeScript / herramientas)
+# Nota: package-lock.json se mantiene versionado para npm ci (CI y Docker).
+# ==============================================================================
+node_modules/
+.pnp
+.pnp.*
+.yarn/
+.pnpm-store/
+.npm/
+.cache/
+.eslintcache
+.prettiercache
+*.tsbuildinfo
+
+# ==============================================================================
+# Build, artefactos generados y reportes de tests
+# ==============================================================================
+dist/
+.build/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+*.tgz
+tmp/
+.tmp/
+temp/
+
+# ==============================================================================
+# Variables de entorno, secretos y certificados TLS
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.csr
+
+# ==============================================================================
+# Logs y archivos de depuración
+# ==============================================================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==============================================================================
+# IA, agentes, skills, prompts y herramientas de asistencia
+# (Se preserva .github/workflows/ para GitHub Actions)
+# ==============================================================================
+# Específicos detectados en este proyecto
+.impeccable/
+.github/agents/
+.github/skills/
+.github/hooks/
+.github/prompts/
+.github/instructions/
+.github/copilot-instructions.md
+Prompt_Codex_*.md
+AUDIT.md
+PRODUCT.md
+VALIDATION.md
+
+# Antigravity / Gemini / agentes genéricos
+.gemini/
+.antigravity/
+.agent/
+.agents/
+
+# OpenAI Codex / Claude Code
+.codex/
+.claude/
+AGENTS.md
+AGENTS.override.md
+CLAUDE.md
+CLAUDE.local.md
+
+# Cursor / Windsurf / Codeium
+.cursor/
+.cursorrules
+.cursorignore
+.cursorindexingignore
+.windsurf/
+.windsurfrules
+.codeium/
+
+# Cline / Roo Code / Kilo / Continue / Cody / Aider / OpenCode / Trae / Kiro
+.cline/
+.clinerules
+.roo/
+.roomodes
+.kilocode/
+.continue/
+.cody/
+.aider*
+.opencode/
+.trae/
+.kiro/
+.specify/
+
+# MCP, indexación de código y notas/configuraciones locales de IA
+.mcp.json
+mcp.json
+.codegraph/
+.ai/
+.llm/
+*.prompt.md
+
+# ==============================================================================
+# IDEs y editores
+# ==============================================================================
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Zed / Fleet / Sublime / Vim / Emacs
+.zed/
+.fleet/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+*~
+\#*#
+.#*
+
+# ==============================================================================
+# Sistema operativo (macOS, Windows, Linux)
+# ==============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Trash-*
+.directory
+.fuse_hidden*
+.nfs*
+
+# ==============================================================================
+# Recursos originales / sensibles de este proyecto
+# ==============================================================================
+# Capturas originales sin recortar (algunas contienen datos reales del comercio)
+project_images/
+# CV original sin limpiar metadatos (el publicado está en public/cv.pdf)
+CV_Agustin_Perez.pdf

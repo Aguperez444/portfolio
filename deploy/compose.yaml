@@ -1,0 +1,19 @@
+services:
+  portfolio:
+    build:
+      context: ..
+      args:
+        SITE_URL: ${SITE_URL:-}
+        PUBLICATION_READY: ${PUBLICATION_READY:-false}
+
+    ports:
+      - '127.0.0.1:8081:80'
+      - '127.0.0.1:9443:443'
+
+    volumes:
+      - '/srv/portfolio-tls:/etc/nginx/tls:ro,Z'
+
+    restart: unless-stopped
+
+    security_opt:
+      - no-new-privileges:true

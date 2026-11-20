@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1219"/>
+  <g fill="none" stroke="#1c303c"><path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200M100 0v630M200 0v630M300 0v630M400 0v630M500 0v630M600 0v630M700 0v630M800 0v630M900 0v630M1000 0v630M1100 0v630" opacity=".35"/><circle cx="1000" cy="320" r="190"/><circle cx="1000" cy="320" r="135" stroke-dasharray="4 8"/></g>
+  <path d="M80 110h40" stroke="#63dac4" stroke-width="3"/>
+  <g font-family="DejaVu Sans,Arial,sans-serif"><text x="138" y="118" font-size="18" letter-spacing="3" fill="#63dac4">BACKEND · ARQUITECTURA · CLOUD</text><text x="80" y="270" font-size="78" font-weight="bold" letter-spacing="-3" fill="#ecf1f5">Agustín Perez<tspan fill="#63dac4">.</tspan></text><text x="83" y="340" font-size="27" fill="#9cabb9">Estudiante avanzado de Ingeniería en Sistemas</text><text x="83" y="385" font-size="27" fill="#9cabb9">Código, criterio y curiosidad.</text><text x="80" y="550" font-size="19" fill="#9cabb9">CÓRDOBA, ARGENTINA</text><text x="910" y="347" fill="#ecf1f5" font-weight="bold" font-size="78" letter-spacing="-7">ap<tspan fill="#63dac4">.</tspan></text></g>
+  <path d="M80 485h1040" stroke="#26333f"/>
+</svg>

@@ -1,0 +1,28 @@
+{
+  "name": "agustin-perez-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.16"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "images": "node scripts/images.mjs",
+    "build": "tsc && node .build/build.js",
+    "check": "tsc --noEmit",
+    "lint": "prettier --check src scripts tests public/theme.js *.json *.md deploy .github Dockerfile .env.example",
+    "format": "prettier --write src scripts tests public/theme.js *.json *.md deploy .github Dockerfile .env.example --ignore-unknown",
+    "preview": "node scripts/serve.mjs",
+    "test": "node tests/site.test.mjs && node tests/client.test.mjs",
+    "test:http": "node tests/http.mjs",
+    "verify": "npm run check && npm run lint && npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "lucide": "^1.67.0",
+    "prettier": "3.9.6",
+    "sharp": "^0.35.5",
+    "typescript": "~5.9.3"
+  }
+}
