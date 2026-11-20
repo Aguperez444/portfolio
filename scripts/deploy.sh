@@ -217,8 +217,10 @@ if ! docker info >/dev/null 2>&1; then
   fi
 fi
 
-[[ -s /srv/portfolio-tls/fullchain.pem && -s /srv/portfolio-tls/privkey.pem ]] || \
-  remote_fail "Faltan certificados TLS en /srv/portfolio-tls/ (fullchain.pem y privkey.pem)."
+if ! sudo -n test -s /srv/portfolio-tls/fullchain.pem ||
+   ! sudo -n test -s /srv/portfolio-tls/privkey.pem; then
+  remote_fail "Los certificados TLS no existen, están vacíos o no son accesibles mediante sudo."
+fi
 
 export SITE_URL PUBLICATION_READY
 
