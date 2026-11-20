@@ -295,8 +295,25 @@ main() {
   phase 4 "Construyendo/actualizando contenedor del portfolio en OCI (ARM64)"
   deploy_remote_stack "$mode"
 
-  phase 5 "Ejecutando smoke test contra $PUBLIC_URL"
-  bash scripts/probar-stack.sh "$PUBLIC_URL"
+  phase 5 "Ejecutando smoke test contra $PUBLIC_URL (desde OCI, sin pasar por Cloudflare)"
+  ssh_remote "bash -se -- '$REMOTE_DIR' '$PUBLIC_URL'" <<'REMOTE_SMOKE'
+set -Eeuo pipefail
+cd "$1"
+PUBLIC_URL="$2"
+
+# Conectar al Nginx del host, conservando el dominio, SNI y validación TLS.
+# Esto evita los bloqueos 403 que Cloudflare puede aplicar al runner de GitHub.
+SMOKE_HOST="${PUBLIC_URL#*://}"
+SMOKE_HOST="${SMOKE_HOST%%/*}"
+SMOKE_HOST="${SMOKE_HOST%%:*}"
+curl() {
+  command curl --resolve "$SMOKE_HOST:80:127.0.0.1" \
+               --resolve "$SMOKE_HOST:443:127.0.0.1" "$@"
+}
+export -f curl
+
+bash scripts/probar-stack.sh "$PUBLIC_URL"
+REMOTE_SMOKE
 
   printf '\n=================================================================\n'
   printf ' DESPLIEGUE DEL PORTFOLIO COMPLETADO: %s\n' "$PUBLIC_URL"
