@@ -306,6 +306,7 @@ PUBLIC_URL="$2"
 SMOKE_HOST="${PUBLIC_URL#*://}"
 SMOKE_HOST="${SMOKE_HOST%%/*}"
 SMOKE_HOST="${SMOKE_HOST%%:*}"
+export SMOKE_HOST
 curl() {
   command curl --resolve "$SMOKE_HOST:80:127.0.0.1" \
                --resolve "$SMOKE_HOST:443:127.0.0.1" "$@"
