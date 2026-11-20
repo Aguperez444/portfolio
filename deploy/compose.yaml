@@ -3,8 +3,8 @@ services:
     build:
       context: ..
       args:
-        SITE_URL: ${SITE_URL:-}
-        PUBLICATION_READY: ${PUBLICATION_READY:-false}
+        SITE_URL: ${SITE_URL:-https://agustinperez.dev.ar}
+        PUBLICATION_READY: ${PUBLICATION_READY:-true}
 
     ports:
       - '127.0.0.1:8081:80'

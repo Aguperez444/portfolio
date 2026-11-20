@@ -1,13 +1,9 @@
 node_modules
 dist
 .build
-Prompt_Codex_Portfolio_Agustin_Perez_actualizado.md
-Prompt_Codex_Portfolio_Agustin_Perez_inventario_real.md
 package-lock.json
 public/fonts/
 deploy/*.conf
 Dockerfile
 .env.example
-# Herramientas instaladas: conservar su formato de origen.
-.github/skills/
-.github/agents/impeccable-*.agent.md
+*.sh
