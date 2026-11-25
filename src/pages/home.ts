@@ -133,7 +133,7 @@ function stackSection(): string {
     )
     .join('');
   return `<section class="section stack-section" id="stack" aria-labelledby="stack-title"><div class="container">
-      <div class="section-heading"><h2 id="stack-title">Las herramientas que utilizo<span class="title-period">.</span></h2><p>Tecnologías que usé en mis proyectos,<br class="desktop-break"/> sin niveles inventados.</p></div>
+      <div class="section-heading"><h2 id="stack-title">Las herramientas que utilizo<span class="title-period">.</span></h2><p>Tecnologías que usé en mis proyectos,<br class="desktop-break"/></p></div>
       <div class="skills-grid">${groups}</div>
     </div></section>`;
 }
