@@ -10,7 +10,7 @@ const OUTPUT = 'public/images';
 
 /**
  * crop: región del original en píxeles. widths: anchos generados (sin ampliar).
- * Las capturas con datos reales de ventas o productos quedan fuera a propósito.
+ * Las capturas incluidas usan datos de prueba y recortan paneles de chat de terceros.
  */
 const manifest = [
   {
@@ -35,18 +35,17 @@ const manifest = [
     crop: { left: 714, top: 0, width: 1120, height: 630 },
     widths: [560, 1120],
   },
+  { id: 'ventas-busqueda', input: 'ventas/product_search.png', widths: [800, 1600] },
   {
     id: 'ventas-alta',
     input: 'ventas/add_product.png',
     crop: { left: 828, top: 0, width: 884, height: 497 },
     widths: [884],
   },
-  {
-    id: 'ups-dashboard',
-    input: 'ups_web_monitor/dashboard.png',
-    crop: { left: 275, top: 0, width: 1120, height: 700 },
-    widths: [560, 1120],
-  },
+  { id: 'ventas-listado', input: 'ventas/sales_overview.png', widths: [800, 1600] },
+  { id: 'ups-flujo', input: 'ups_web_monitor/dashboard_principal.png', widths: [800, 1600] },
+  { id: 'ups-info', input: 'ups_web_monitor/informacion_ups.png', widths: [800, 1600] },
+  { id: 'ups-historial', input: 'ups_web_monitor/historial_carga.png', widths: [800, 1600] },
 ];
 
 await rm(OUTPUT, { recursive: true, force: true });

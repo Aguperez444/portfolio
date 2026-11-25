@@ -37,8 +37,9 @@ test('publicación configurable, sin indexar una revisión ni anunciar títulos 
   assert.doesNotMatch(review, /href="\/cv.pdf"/);
   assert.match(review, /TÍTULO INTERMEDIO · PREVISTO/);
   assert.match(review, /Académico \/ colaborativo/);
-  assert.match(review, /primer dashboard en Next\.js muestra el resumen/);
-  assert.match(review, /gráficos, el historial y las alertas siguen pendientes/);
+  assert.match(review, /v1\.0\.0 publicada/);
+  assert.match(review, /flujo eléctrico en vivo/);
+  assert.match(review, /historial interactivo con gráficos/);
   assert.doesNotMatch(review, /3535083770|tel:/);
   const production = home({
     siteUrl: 'https://portfolio.example',
@@ -182,7 +183,7 @@ test('EF SET conserva las diferencias por habilidad y sólo enlaza el certificad
 
 test('las imágenes optimizadas definen dimensiones intrínsecas, srcset existente y excluyen datos sensibles', async () => {
   const imgTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
-  assert.equal(imgTags.length, 7);
+  assert.equal(imgTags.length, 11);
   for (const tag of imgTags) {
     assert.match(tag, /\bsrc="\/images\/[^"]+\.webp"/, tag);
     assert.match(tag, /\bwidth="\d+"/, tag);
@@ -196,7 +197,7 @@ test('las imágenes optimizadas definen dimensiones intrínsecas, srcset existen
     }
   }
   const lightboxLinks = [...html.matchAll(/<a\b[^>]*\bdata-lightbox\b[^>]*>/g)].map((m) => m[0]);
-  assert.equal(lightboxLinks.length, 6);
+  assert.equal(lightboxLinks.length, 10);
   for (const anchor of lightboxLinks) {
     const href = anchor.match(/\bhref="([^"]+)"/)?.[1];
     assert.ok(href, anchor);
@@ -204,8 +205,14 @@ test('las imágenes optimizadas definen dimensiones intrínsecas, srcset existen
     assert.match(anchor, /\bdata-caption="[^"]+"/, anchor);
   }
   const builtImages = await readdir('dist/images');
-  for (const file of builtImages) {
-    assert.doesNotMatch(file, /product_search|sales_overview/);
+  for (const expected of [
+    'ventas-busqueda-1600.webp',
+    'ventas-listado-1600.webp',
+    'ups-flujo-1600.webp',
+    'ups-info-1600.webp',
+    'ups-historial-1600.webp',
+  ]) {
+    assert.ok(builtImages.includes(expected), `Falta imagen generada: ${expected}`);
   }
   const cvBytes = await readFile('dist/cv.pdf');
   assert.equal(cvBytes.includes(Buffer.from('Banco Roela')), false);

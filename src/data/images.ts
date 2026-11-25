@@ -43,6 +43,13 @@ export const images = {
     width: 1120,
     height: 630,
   },
+  'ventas-busqueda': {
+    src: '/images/ventas-busqueda-800.webp',
+    full: '/images/ventas-busqueda-1600.webp',
+    srcset: '/images/ventas-busqueda-800.webp 800w, /images/ventas-busqueda-1600.webp 1600w',
+    width: 1600,
+    height: 615,
+  },
   'ventas-alta': {
     src: '/images/ventas-alta-884.webp',
     full: '/images/ventas-alta-884.webp',
@@ -50,12 +57,33 @@ export const images = {
     width: 884,
     height: 497,
   },
-  'ups-dashboard': {
-    src: '/images/ups-dashboard-560.webp',
-    full: '/images/ups-dashboard-1120.webp',
-    srcset: '/images/ups-dashboard-560.webp 560w, /images/ups-dashboard-1120.webp 1120w',
-    width: 1120,
-    height: 700,
+  'ventas-listado': {
+    src: '/images/ventas-listado-800.webp',
+    full: '/images/ventas-listado-1600.webp',
+    srcset: '/images/ventas-listado-800.webp 800w, /images/ventas-listado-1600.webp 1600w',
+    width: 1600,
+    height: 766,
+  },
+  'ups-flujo': {
+    src: '/images/ups-flujo-800.webp',
+    full: '/images/ups-flujo-1600.webp',
+    srcset: '/images/ups-flujo-800.webp 800w, /images/ups-flujo-1600.webp 1600w',
+    width: 1600,
+    height: 777,
+  },
+  'ups-info': {
+    src: '/images/ups-info-800.webp',
+    full: '/images/ups-info-1600.webp',
+    srcset: '/images/ups-info-800.webp 800w, /images/ups-info-1600.webp 1600w',
+    width: 1600,
+    height: 779,
+  },
+  'ups-historial': {
+    src: '/images/ups-historial-800.webp',
+    full: '/images/ups-historial-1600.webp',
+    srcset: '/images/ups-historial-800.webp 800w, /images/ups-historial-1600.webp 1600w',
+    width: 1600,
+    height: 778,
   },
 } satisfies Record<string, ImageAsset>;
 

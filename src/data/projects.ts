@@ -25,7 +25,7 @@ export interface Project {
   summary: string;
   stack: string[];
   links: { repo: string; demo?: string };
-  state: 'En desarrollo' | 'Código disponible' | 'En uso desde 2023';
+  state: 'En desarrollo' | 'Código disponible' | 'En uso desde 2023' | 'v1.0.0 publicada';
   role: string;
   detail: { title: string; description: string }[];
   media?: ProjectMedia[];
@@ -136,15 +136,25 @@ export const projects: Project[] = [
         caption: 'Menú principal',
       },
       {
+        image: 'ventas-busqueda',
+        alt: 'Pantalla de búsqueda de productos con filtro en tiempo real y tabla con datos de prueba de código, precio, detalle y stock.',
+        caption: 'Búsqueda de productos',
+      },
+      {
         image: 'ventas-alta',
         alt: 'Formulario de alta de producto con nombre, código, precio, detalle, stock y código de barras.',
         caption: 'Alta de productos',
+      },
+      {
+        image: 'ventas-listado',
+        alt: 'Listado de ventas con selector por fecha, tabla de movimientos de prueba por producto, cantidad, total, fecha y hora, y total mensual.',
+        caption: 'Listado de ventas',
       },
     ],
     visibility: true,
     featured: false,
     icon: 'box',
-    verifiedAt: '2026-11-03',
+    verifiedAt: '2026-11-25',
   },
   {
     id: 'microservicios',
@@ -195,28 +205,38 @@ export const projects: Project[] = [
     name: 'UPS Web Monitor',
     category: 'Personal · Open source',
     summary:
-      'Una API que integra Network UPS Tools para consultar el estado de una UPS desde Linux. Un punto de encuentro entre hardware y backend.',
-    stack: ['Python', 'FastAPI', 'NUT', 'Next.js', 'Linux'],
+      'Un monitor web que integra Network UPS Tools para supervisar el estado, el flujo eléctrico y el historial de una UPS desde Linux. Un punto de encuentro entre hardware y backend.',
+    stack: ['Python', 'FastAPI', 'NUT', 'SQLite', 'Next.js', 'Linux'],
     links: { repo: 'https://github.com/Aguperez444/ups-web-monitor' },
-    state: 'En desarrollo',
-    role: 'Desarrollo la API y un primer dashboard para consultar el estado de una UPS.',
+    state: 'v1.0.0 publicada',
+    role: 'Diseñé y desarrollé el backend con arquitectura hexagonal, la persistencia histórica en SQLite, el dashboard en Next.js y el empaquetado como AppImage con bandeja del sistema.',
     detail: [
       {
-        title: 'Estado actual',
+        title: 'Primera versión publicada (v1.0.0)',
         description:
-          'El backend expone datos de NUT en /ups/raw y /ups/summary, y un primer dashboard en Next.js muestra el resumen. Los gráficos, el historial y las alertas siguen pendientes; no se presentan como funciones terminadas.',
+          'Incluye vista de flujo eléctrico en vivo, panel con métricas detalladas de la UPS e historial interactivo con gráficos y retención persistente en SQLite. Se distribuye además como AppImage portable para Linux con ícono en la bandeja del sistema.',
       },
     ],
     media: [
       {
-        image: 'ups-dashboard',
-        alt: 'Primer dashboard con estado de la UPS, carga, voltajes de entrada, salida y batería, nivel de batería y frecuencia.',
-        caption: 'Primer dashboard (en desarrollo)',
+        image: 'ups-flujo',
+        alt: 'Vista de flujo eléctrico de UPS Monitor con voltajes de entrada y salida, capacidad de batería, nivel de carga, ruta de alimentación en línea y lecturas del equipo.',
+        caption: 'Flujo eléctrico en vivo',
+      },
+      {
+        image: 'ups-info',
+        alt: 'Panel de información de la UPS con indicadores circulares de capacidad de batería y carga, y lecturas agrupadas por entrada, equipo, batería y salida.',
+        caption: 'Información de la UPS',
+      },
+      {
+        image: 'ups-historial',
+        alt: 'Vista de historial de UPS Monitor con gráficos temporales de voltaje de entrada y salida, frecuencia, nivel de carga y voltaje de batería con selector de intervalo.',
+        caption: 'Historial y gráficos',
       },
     ],
     visibility: true,
     featured: false,
     icon: 'activity',
-    verifiedAt: '2026-11-03',
+    verifiedAt: '2026-11-25',
   },
 ];
